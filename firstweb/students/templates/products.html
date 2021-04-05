@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-2 col-xs-12 left-sidebar">
+
+            <h6 class="text-center mt-4">Brands</h6>
+            <ul class="left-sidebar-ul">
+                <li><input type="checkbox"> Arrow</li>
+                <li><input type="checkbox"> Addidas</li>
+                <li><input type="checkbox"> U.S. Polo</li>
+                <li><input type="checkbox"> Puma</li>
+            </ul>
+
+
+            <h6 class="text-center mt-4">Price Range</h6>
+            <ul class="left-sidebar-ul">
+                <li><input type="checkbox"> Rs. 1000 - 2000</li>
+                <li><input type="checkbox"> Rs. 2000 - 3000</li>
+                <li><input type="checkbox"> Rs. 3000 - 4000</li>
+                <li><input type="checkbox"> Rs. 4000 - 5000</li>
+            </ul>
+
+
+
+        </div>
+        <div class="col-md-10 col-xs-12 right-sidebar">
+
+            <h1 class="text-center">T-Shirts</h1>
+
+            <div class="row mt-4">
+                <div class="col-md-4 mb-2">
+                    <img src="{% static 'images/products/product1.jpg' %}" />
+                    <div class="text-center mt-4">
+                        <h4>Product 1</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <img src="{% static 'images/products/product1.jpg' %}" />
+                    <div class="text-center mt-4">
+                        <h4>Product 2</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <img src="{% static 'images/products/product1.jpg' %}" />
+                    <div class="text-center mt-4">
+                        <h4>Product 3</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-2">
+                    <img src="{% static 'images/products/product1.jpg' %}" />
+                    <div class="text-center mt-4">
+                        <h4>Product 3</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-2">
+                    <img src="{% static 'images/products/product1.jpg' %}" />
+                    <div class="text-center mt-4">
+                        <h4>Product 3</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-2">
+                    <img src="{% static 'images/products/product1.jpg' %}" />
+                    <div class="text-center mt-4">
+                        <h4>Product 3</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock content %}

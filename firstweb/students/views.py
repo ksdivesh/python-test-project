@@ -8,6 +8,9 @@ def index(request):
 def fee(request):
     return render(request, "fees/fee.html")
 
+def products(request):
+    return render(request, "products.html")
+
 def register(request):
     return render(request, "register.html")
 

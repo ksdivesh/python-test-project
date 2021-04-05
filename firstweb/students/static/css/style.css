@@ -1,24 +1,36 @@
-.offer-heading{
-
-color: blue
-
+.offer-heading {
+  color: blue;
 }
 
-.banner-img1{
-    min-height: 400px;
-    background: url(/static/images/banners/banner1.jpg) center;
-    background-repeat: no-repeat;
-    background-size: 95%;
+.banner-img1 {
+  min-height: 400px;
+  background: url(/static/images/banners/banner1.jpg) center;
+  background-repeat: no-repeat;
+  background-size: 95%;
 }
 
-.banner-img2{
-    min-height: 400px;
-    background: url(/static/images/banners/banner2.jpg) center;
-    background-repeat: no-repeat;
-    background-size: 95%;
+.banner-img2 {
+  min-height: 400px;
+  background: url(/static/images/banners/banner2.jpg) center;
+  background-repeat: no-repeat;
+  background-size: 95%;
 }
 
-.shop-btn{
-    position: relative;
-    top: 235px;
+.shop-btn {
+  position: relative;
+  top: 235px;
+}
+
+.left-sidebar {
+  background-color: lightcoral;
+  min-height: 500px;
+}
+
+.right-sidebar {
+  background-color: lightblue;
+  min-height: 500px;
+}
+
+.left-sidebar-ul {
+  list-style: none;
 }

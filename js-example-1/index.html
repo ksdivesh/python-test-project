@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div-element">
+        <h1>Test Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consequuntur sint maiores dignissimos quam?
+            Nam deserunt consequuntur explicabo esse, ratione odio qui corrupti, facere impedit doloribus eius
+            aspernatur ipsum nesciunt!</p>
+    </div>
+
+    <div>
+        <button type="button" id="toggleBtn">Toggle</button>
+    </div>
+
+    <script>
+
+
+        window.addEventListener("DOMContentLoaded", (e) => {
+
+            let divElement = document.querySelector("#div-element");
+
+            if (sessionStorage.getItem("hideSidebar")) {
+                divElement.classList.add("hide");
+            }
+
+
+        });
+
+
+        document.querySelector("#toggleBtn").addEventListener("click", (e) => {
+
+
+            let divElement = document.querySelector("#div-element");
+
+            if (divElement.classList.contains("hide")) {
+                sessionStorage.setItem("hideSidebar", true);
+                divElement.classList.remove("hide");
+            }
+            else {
+                sessionStorage.removeItem("hideSidebar");
+                divElement.classList.add("hide");
+            }
+
+        });
+
+    </script>
+
+</body>
+
+
+
+</html>
