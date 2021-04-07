@@ -20,8 +20,28 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     rating = models.IntegerField(max_length=1, default=0)
     qty = models.IntegerField(max_length=6, default=0)
+    main_image = models.ImageField(
+        upload_to='static/images/products', null=True)
     created_at = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name + " (" + self.category.name + ")"
+
+
+class ProductImage(models.Model):
+    image = models.ImageField(upload_to='static/images/products/')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} ({})".format(self.product.name, str(self.image))
+
+
+class SliderImage(models.Model):
+    image = models.ImageField(upload_to='static/images/sliders/')
+    name = models.CharField(max_length=100, null=True)
+    tagline = models.CharField(max_length=255, null=True)
+    active = models.IntegerField(max_length=1, default=0)
+
+    def __str__(self):
+        return self.name
