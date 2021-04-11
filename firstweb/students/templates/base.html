@@ -27,6 +27,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/products">Products</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">My Cart</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -45,15 +48,38 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+        {% if user.is_authenticated %}
+
+        <label for="">Hi {{user.first_name}}</label>
+        &nbsp;
+        <a class="btn btn-success" href="/customer_profile">Profile</a>
+        &nbsp;
+        <a class="btn btn-danger" href="/logout">Logout</a>
+        {% else %}
+        <a class="btn btn-danger" href="/login">Log In</a>
+        &nbsp;
+        <a class="btn btn-danger" href="/register">Register</a>
+        {% endif %}
+
       </div>
     </div>
   </nav>
 
+  <!-- Message -->
 
+  <!-- in built messaging django -->
+
+  {% for message in messages %}
+  <div class="alert alert-{{message.tags}} mt-4">
+    {{message}}
+  </div>
+  {% endfor %}
+
+
+
+
+  <!-- End Message -->
 
   {% block content %}{% endblock %}
 

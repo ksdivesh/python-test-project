@@ -72,16 +72,23 @@
       <div class="text-center mt-4">
         <h4>{{product.name}} ({{product.category.name}})</h4>
         <h5>₹ {{product.price}}</h5>
+        {% for productimage in product.productimage_set.all %}
+        {{productimage.image}}
+        {% endfor %}
 
-        <button class="btn btn-primary">
+        <form action="/add_to_cart" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="product_id" value="{{product.id}}" />
+          <button class="btn btn-primary" type="submit">
 
-          Add to Cart
+            Add to Cart
 
-          {% if product.discount > 0 %}
-          ({{product.discount}} % OFF)
-          {% endif %}
+            {% if product.discount > 0 %}
+            ({{product.discount}} % OFF)
+            {% endif %}
 
-        </button>
+          </button>
+        </form>
       </div>
     </div>
 

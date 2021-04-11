@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1>My Cart</h1>
+
+    <div class="table-responsive">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Cart Id</th>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for cart in cartList %}
+
+                <tr>
+                    <td>{{cart.id}}</td>
+                    <td>
+                        <img src="{{cart.product.main_image}}" style="width: 150px; height: 150px;" />
+                    </td>
+                    <td>{{cart.product.name}}</td>
+                    <td>1</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+{% endblock content %}
